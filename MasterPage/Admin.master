@@ -1,0 +1,416 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="MasterPage_Admin, App_Web_epkstiy3" %>
+
+<%@ Register src="~/MasterPage/CalenderAdmin.ascx" tagname="WebUserControl" tagprefix="uc1" %>
+<%@ Register Src ="~/MasterPage/SearchTenderAdmin.ascx" TagName ="WebUserControl" TagPrefix ="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Premium Series
+Description: A three-column, fixed-width blog design.
+Version    : 1.0
+Released   : 20090303
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat ="server">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>E-Tendering</title>
+<meta name="keywords" content="" />
+<meta name="Premium Series" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="Scripts/jquery-1.4.3.js"></script>
+    
+</head>
+<body>
+<form id ="frm" runat ="server" >
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h1><span>e-</span>tendering</h1>
+         <div style="float:none  ;font-size :18px;padding-top :80px;margin-left:500px;text-align :right ">
+             <asp:Label ID="Label1" runat="server"></asp:Label>
+        </div>
+		<%--<p>Designed By Free CSS Templates</p>--%>
+	</div>
+	<div id="menu">
+		<ul id="main">
+			<li class="current_page_item">
+                <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl ="~/Admin/Admin_Homepage.aspx">Homepage</asp:HyperLink>
+            </li>
+			<li>
+            <<asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl ="~/Admin/Tenders.aspx">Tenders</asp:HyperLink>
+            </li>
+			<li>
+            <asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl ="~/Admin/Aboutus.aspx">About Us</asp:HyperLink>  
+            </li>
+			<li>
+            <asp:HyperLink ID="HyperLink14" runat="server" NavigateUrl ="~/Admin/Contactus.aspx">Contact Us</asp:HyperLink>
+            </li>
+            <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl ="~/Admin/ChangePassword.aspx">ChangePassword</asp:HyperLink></li>
+           <li>
+            <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click1">Logout</asp:LinkButton>
+             </li>
+		</ul>
+
+		<!--<ul id="feed">
+			<li><a href="#">Entries RSS</a></li>
+			<li><a href="#">Comments RSS</a></li>
+		</ul>-->
+
+	</div>
+	
+</div>
+<!-- end header -->
+<div id="wrapper">
+	<!-- start page -->
+	<div id="page">
+		<div id="sidebar1" class="sidebar">
+			<ul>
+            <li>
+					<h2>Main Board</h2>
+					<ul>
+						<li>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl ="~/Admin/TenderCategory.aspx">Manage Category</asp:HyperLink>
+                        </li>
+						<li>
+                            <asp:HyperLink ID="HyperLink15" runat="server" NavigateUrl ="~/Admin/TenderSubCategory.aspx">Manage SubCategory</asp:HyperLink>
+                            </li>
+						<li>
+                            <asp:HyperLink ID="HyperLink16" runat="server" NavigateUrl ="~/Admin/ManageCompany.aspx">Manage Company</asp:HyperLink>
+                        </li>
+						<li>
+                            <asp:HyperLink ID="HyperLink17" runat="server" NavigateUrl ="~/Admin/ManageBuyer.aspx">Manage Buyer</asp:HyperLink>
+                        </li>
+						<li>
+                            <asp:HyperLink ID="HyperLink18" runat="server" NavigateUrl ="~/Admin/State.aspx">Manage State</asp:HyperLink>
+                        </li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink19" runat="server" NavigateUrl ="~/Admin/City.aspx">Manage City</asp:HyperLink>
+                        </li>
+                       <%-- <li>
+                            <asp:HyperLink ID="HyperLink21" runat="server" NavigateUrl ="">Manage Payment</asp:HyperLink>
+                        </li>--%>
+						<%--<li>
+                            <asp:HyperLink ID="HyperLink22" runat="server" NavigateUrl ="~/Admin/Reports.aspx">Reports</asp:HyperLink>
+                        </li>--%>
+						<%--<li>
+                            <asp:HyperLink ID="HyperLink20" runat="server" NavigateUrl ="">Manage Tenders</asp:HyperLink>
+                        </li>--%>
+						
+						<%--<li><a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>--%>
+					</ul>
+				</li>
+			<!--	<li>
+					<h2>Recent Posts</h2>
+					<ul>
+						<li><a href="#">Aliquam libero</a></li>
+						<li><a href="#">Consectetuer adipiscing elit</a></li>
+						<li><a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>
+						<li><a href="#">Aliquam libero</a></li>
+						<li><a href="#">Consectetuer adipiscing elit</a></li>
+						<li><a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>
+					</ul>
+				</li>-->
+				<!--<li>
+					<h2>Recent Comments</h2>
+					<ul>
+						<li><a href="#">Free CSS Templates</a> on <a href="#">Aliquam libero</a></li>
+						<li><a href="#">Free CSS Templates</a> on <a href="#">Consectetuer adipiscing elit</a></li>
+						<li><a href="#">Free CSS Templates</a> on <a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Free CSS Templates</a> on <a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Free CSS Templates</a> on <a href="#">Urnanet non molestie semper</a></li>
+						<li><a href="#">Free CSS Templates</a> on <a href="#">Proin gravida orci porttitor</a></li>
+					</ul>
+				</li>-->
+				<li>
+					<h2>Categories</h2>
+					<ul>
+						<li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/ActiveTenders.aspx">Active Tenders</asp:HyperLink></li>
+						<li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl ="~/Admin/ArchieveTenders.aspx">Archive Tenders</asp:HyperLink></li>
+						<li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/TendersByStartingDate.aspx">Tenders By Starting Date</asp:HyperLink></li>
+						<li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl ="~/Admin/TendersByEndingDate.aspx">Tenders By EndingDate</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl ="~/Admin/TendersByCategory.aspx">Tenders By Category</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl ="~/Admin/TendersByState.aspx">Tenders By State</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl ="~/Admin/TendersByCity.aspx">Tenders By City</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl ="~/Admin/TendersByCompany.aspx">Tenders By Company</asp:HyperLink></li>
+						<!--<li><a href="#">Urnanet non molestie semper</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>-->
+					</ul>
+				</li>
+
+                	<li>
+					<h2>Calendar</h2>
+           
+             <br />
+                        <uc1:WebUserControl ID="Calendar1" runat="server" />
+					<%--<div id="calendar_wrap">
+						<table summary="Calendar">
+							<caption>
+							October 2009
+							</caption>
+							<thead>
+								<tr>
+									<th abbr="Monday" scope="col" title="Monday">M</th>
+									<th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+									<th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+									<th abbr="Thursday" scope="col" title="Thursday">T</th>
+									<th abbr="Friday" scope="col" title="Friday">F</th>
+									<th abbr="Saturday" scope="col" title="Saturday">S</th>
+									<th abbr="Sunday" scope="col" title="Sunday">S</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td abbr="September" colspan="3" id="prev"><a href="#" title="View posts for September 2009">&laquo; Sep</a></td>
+									<td class="pad">&nbsp;</td>
+									<td colspan="3" id="next">&nbsp;</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td id="today">4</td>
+									<td>5</td>
+									<td>6</td>
+									<td>7</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>9</td>
+									<td>10</td>
+									<td>11</td>
+									<td>12</td>
+									<td>13</td>
+									<td>14</td>
+								</tr>
+								<tr>
+									<td>15</td>
+									<td>16</td>
+									<td>17</td>
+									<td>18</td>
+									<td>19</td>
+									<td>20</td>
+									<td>21</td>
+								</tr>
+								<tr>
+									<td>22</td>
+									<td>23</td>
+									<td>24</td>
+									<td>25</td>
+									<td>26</td>
+									<td>27</td>
+									<td>28</td>
+								</tr>
+								<tr>
+									<td>29</td>
+									<td>30</td>
+									<td>31</td>
+									<td class="pad" colspan="4">&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>--%>
+				</li>
+				<!--<li>
+					<h2>Archives</h2>
+					<ul>
+						<li><a href="#">September</a> (23)</li>
+						<li><a href="#">August</a> (31)</li>
+						<li><a href="#">July</a> (31)</li>
+						<li><a href="#">June</a> (30)</li>
+						<li><a href="#">May</a> (31)</li>
+					</ul>
+				</li>-->
+
+			</ul>
+		</div>
+		<!-- start content -->
+		<div id="content">
+			<div class="flower">  <asp:ContentPlaceHolder id ="cphBody" runat ="server" ></asp:ContentPlaceHolder><%--<img src="images/images (3).jpg" alt="" width="510" height="250" />--%></div>
+			<div class="post">
+				<%--<h1 class="title"><a href="#">Welcome to Our Website!</a></h1>
+				<p class="byline"><small>Posted on October 1st, 2009 by <a href="#">Free CSS Templates</a></small></p>
+				<div class="entry">
+					<p><strong>Premium Series</strong> is a free, fully standards-compliant CSS template designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. This free template is released under a <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attributions 2.5</a> license, so you're pretty much free to do whatever you want with it  (even use it commercially) provided you keep the links in the footer intact. Have fun with it :)</p>
+					<p class="links"><a href="#" class="more">&laquo;&laquo;&nbsp;&nbsp;Read More&nbsp;&nbsp;&raquo;&raquo;</a></p>
+				</div>
+			</div>
+			<div class="post">
+				<h2 class="title"><a href="#">Sample Tags</a></h2>
+				<p class="byline"><small>Posted on October 1st, 2009 by <a href="#">Free CSS Templates</a></small></p>
+				<div class="entry">
+					<h3>An H3 Followed by a Blockquote:</h3>
+					<blockquote>
+						<p>&#8220;Donec leo, vivamus nibh in augue at urna congue rutrum. Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.&#8221;</p>
+					</blockquote>
+					<h3>Bulleted List:</h3>
+					<ul>
+						<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+						<li>Phasellus nec erat sit amet nibh pellentesque congue.</li>
+						<li>Cras vitae metus aliquam risus pellentesque pharetra.</li>
+					</ul>
+					<h3>Numbered List:</h3>
+					<ol>
+						<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+						<li>Phasellus nec erat sit amet nibh pellentesque congue.</li>
+						<li>Cras vitae metus aliquam risus pellentesque pharetra.</li>
+					</ol>
+					<p class="links"><a href="#" class="more">&laquo;&laquo;&nbsp;&nbsp;Read More&nbsp;&nbsp;&raquo;&raquo;</a></p>
+				</div>
+			</div>
+			<div class="post">
+				<h2 class="title"><a href="#">Lorem Ipsum Dolor </a></h2>
+				<p class="byline"><small>Posted on October 1st, 2009 by <a href="#">Free CSS Templates</a></small></p>
+				<div class="entry">
+					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet at, ultrices eget, ornare et, wisi. </p>
+					<p class="links"><a href="#" class="more">&laquo;&laquo;&nbsp;&nbsp;Read More&nbsp;&nbsp;&raquo;&raquo;</a></p>
+				</div>--%>
+			</div>
+		</div>
+		<!-- end content -->
+		<!-- start sidebars -->
+		<div id="sidebar2" class="sidebar">
+       
+			<ul>
+				<li>
+					<form id="searchform" method="get" action="#">
+						<div>
+                      <%--  <h2>Login</h2>
+                         <asp:ContentPlaceHolder ID ="cphLogin" runat ="server" >
+        </asp:ContentPlaceHolder>--%>
+							<h2>Search Tender</h2>
+                              <uc2:WebUserControl ID="WebUserControl1" runat="server" />
+							<%--<input type="text" name="s" id="s" size="15" value="" />--%>
+						</div>
+					</form>
+				</li>
+				<li>
+					<h2>FAQ</h2>
+					<!--<p class="tag"><a href="#">dolor</a> <a href="#">ipsum</a> <a href="#">lorem</a> <a href="#">sit amet</a> <a href="#">dolor</a> <a href="#">ipsum</a> <a href="#">lorem</a> <a href="#">sit amet</a></p>-->
+                    <ul>
+                        <li><a href ="../Admin/FAQ.aspx">FAQ</a></li>
+                        <li><a href ="../Admin/Contactus.aspx">Contact Us</a></li>
+                    </ul>
+                    </li>
+				<li>
+                <asp:ContentPlaceHolder ID ="cphAdvertisement" runat ="server" >
+                 <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Advertisement.xml" />
+                </asp:ContentPlaceHolder>
+                </li> 
+				<!--<li>
+					<h2>Categories</h2>
+					<ul>
+						<li><a href="#">Aliquam libero</a></li>
+						<li><a href="#">Consectetuer adipiscing elit</a></li>
+						<li><a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Urnanet non molestie semper</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>
+						<li><a href="#">Aliquam libero</a></li>
+						<li><a href="#">Consectetuer adipiscing elit</a></li>
+						<li><a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Urnanet non molestie semper</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>
+						<li><a href="#">Aliquam libero</a></li>
+						<li><a href="#">Consectetuer adipiscing elit</a></li>
+						<li><a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Urnanet non molestie semper</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>
+						<li><a href="#">Metus aliquam pellentesque</a></li>
+						<li><a href="#">Suspendisse iaculis mauris</a></li>
+						<li><a href="#">Urnanet non molestie semper</a></li>
+						<li><a href="#">Proin gravida orci porttitor</a></li>
+						<li><a href="#">Metus aliquam pellentesque</a></li>
+					</ul>
+				</li>-->
+			</ul>
+		</div>
+		<!-- end sidebars -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end page -->
+</div>
+ <%--<div id="footer">
+    <br />
+        <div>
+            <h2>
+                E-Tendering</h2>
+            <ul>
+                <li><a href="why-firsttender.html">Why FirstTender.com</a></li>
+                <li><a target="_blank" href="../Home.aspx">Home</a></li>
+                <li><a href="../Admin/Aboutus.aspx">About us</a></li>
+                <li><a href="../Admin/Contactus.aspx">Contact Us</a></li>
+                <li><a href="../Services.aspx">Services</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>
+                Terms &amp; Policy</h2>
+            <ul>
+                <li><a href="../FAQ.aspx">FAQ</a></li>
+                <li><a href="sitemap.html">SiteMap</a></li>
+                <li><a href="../PrivacyPolicy.aspx">Privacy Policy</a></li>
+                <li><a href="../TermsCondition.aspx">Terms &amp; Condition</a></li>
+                <!-- <li><a href="#">Tenders by PSU</a></li>
+				<li><a href="#">Tenders by Government Organisation</a></li>
+				<li><a href="#">Tenders by City</a></li>
+			    <li><a href="#">Tenders By Banks</a></li>
+			    <li><a href="#">Private Tenders</a></li>-->
+            </ul>
+        </div>
+        <div>
+			<h2>Follow Us</h2>
+			<ul>
+			    <li><a href="http://www.facebook.com/firsttender" target="_blank">Facebook</a></li>
+			    <li><a href="https://twitter.com/FirstTenders" target="_blank">Twitter</a></li>
+			    <li><a href="http://www.youtube.com/user/firsttender" target="_blank">Youtube</a></li>
+			    
+			</ul>
+		</div>
+		
+		<div>
+			            <h2>Quick Links</h2>
+            <ul>
+            	<li><a href="tender-by-id.html">Tenders by Ref Id</a></li>
+                <li><a href="request-call-back.html">Request a call back</a></li>
+                <li><a href="register-a-problem.html">Register a problem</a></li>
+                <li><a href="advertise.html">Advertise with Us</a></li>
+                </ul>
+		</div>
+		
+		<div>
+			<h2>CALL US</h2>
+			<ul>
+			    <li><a>Mobile:<br />+91-9974755006</a></li>
+			    <li><a>Landline:<br /> +91-11-4131-4141</a></li>
+			    <li><a>Email:<br /> info@tops-int.com</a></li>
+			</ul>
+		</div>
+        <div class="clear"></div>
+        <div style="font-size:14px; color:#FFFFFF; font-weight:bold;" align="center"> We accept all Major Credit Cards<br /><br /><a href="payment/tenders-subscription.html"> <img src="images/Credit-Cards/Visacard.jpg" alt="Pay by Visa Crads" border="0" />&nbsp;<img src="images/Credit-Cards/Master-Credit-Card.jpg" alt="Pay by Mastercards" border="0" />&nbsp;<img src="images/Credit-Cards/maestro.jpg" alt="Pay by Maestro Cards" border="0" />&nbsp;<img src="images/Credit-Cards/diner-club-card.jpg" alt="Pay by Diners club cards" border="0" />&nbsp;<img src="images/Credit-Cards/jcb.jpg" alt="JCB Cards" border="0" /></a></div>
+        <br />
+		<div class="copy">Copyright © 2012 3SG Online Inc. - All Rights Reserved</div>
+	</div>
+        <!--footer links starts here-->
+        <!--<p class="copyright">&copy;&nbsp;&nbsp;2009 All Rights Reserved &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>-->
+        <p class="link">
+            <a href="#">Privacy Policy</a>&nbsp;&#8226;&nbsp;<a href="#">Terms of Use</a></p>
+    </div>
+    <div align="center">This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div> 
+  --%>  </form>
+</body>
+</html>
+

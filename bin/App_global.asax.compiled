@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="8" virtualPath="/E-Tendering/global.asax" hash="41320498" filehash="ffffcdaf8cbc94c5" flags="150000" assembly="App_global.asax" type="ASP.global_asax">
+    <filedeps>
+        <filedep name="/E-Tendering/global.asax" />
+    </filedeps>
+</preserve>

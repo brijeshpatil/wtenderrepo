@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+    <Ad>
+        <Title></Title>
+        <ImageUrl>Advertisement/download.jpg</ImageUrl>
+        <!--<NavigateUrl>http://www.google.com</NavigateUrl>-->
+        <Height>300px</Height>
+        <Width>200px</Width>
+        <Impressions>20</Impressions>
+        <!--<Duration>2000</Duration>-->
+    </Ad>
+    <Ad>
+        <ImageUrl>Advertisement/download (1).jpg</ImageUrl>
+        <!--<NavigateUrl>Default3.aspx</NavigateUrl>-->
+        <Height>300px</Height>
+        <Width>200px</Width>
+        <Impressions>40</Impressions>
+        <!--<Duration>2000</Duration>-->
+    </Ad>
+    <Ad>
+        <ImageUrl>Advertisement/download (2).jpg</ImageUrl>
+        <!--<NavigateUrl>Default4.aspx</NavigateUrl>-->
+        <Height>300px</Height>
+        <Width>200px</Width>
+        <Impressions>80</Impressions>
+        <!--<Duration>2000</Duration>-->
+    </Ad>
+    <Ad>
+        <ImageUrl>Advertisement/images.jpg</ImageUrl>
+        <!--<NavigateUrl>Default5.aspx</NavigateUrl>-->
+        <Height>300px</Height>
+        <Width>200px</Width>
+        <Impressions>60</Impressions>
+        <!--<Duration>2000</Duration>-->
+    </Ad>
+
+</Advertisements>
